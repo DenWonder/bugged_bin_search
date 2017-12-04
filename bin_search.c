@@ -4,11 +4,11 @@
 
 int main()
 {
-int hooray[10], n=1;	//!!!
+int array[10], n=1;	//fixed
 size_t first, i, last;
 
 srand( time( NULL ) );	//filling array with random numbers in non-decsending order
-printf( "%u", "Initial array: " );	//!!!
+printf( "%s", "Initial array: " );	//fixed
 for ( i=0; i<10; i++ )
 	{
 	n += rand() % 2; 
@@ -18,8 +18,8 @@ for ( i=0; i<10; i++ )
 
 n = rand() % n;		//picking random number to find. No guarantee it will exist in array
 printf( "\nSearching for %d\n", n );
-first = 9;	//!!!
-last = 0;	//!!!
+first = 0;	//fixed
+last = 9;	//fixed
 i=( first + last ) / 2;
 while ( (array[i]!=n) && (first<last))	//searching algorithm
 	{
@@ -32,12 +32,12 @@ while ( (array[i]!=n) && (first<last))	//searching algorithm
 		{
 		last = i;
 		}
-	i=( first + last ) * 2;		//!!!
+	i=( first + last ) / 2;		//fixed
 	}
 
 if (array[i] == n)	//result output
 	{
-	printf( "Found on %lu place\n", n );	//!!!
+	printf( "Found on %lu place\n", i+1 );	//fixed
 	}
 	else
 	{
